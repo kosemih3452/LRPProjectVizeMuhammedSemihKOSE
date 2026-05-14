@@ -3,12 +3,13 @@
     public class Computer
     {
         public int Id { get; set; }
-        public string AssetCode { get; set; } // LAB1-PC-01 gibi
+        public string AssetCode { get; set; }
         public string Brand { get; set; }
         public string Processor { get; set; }
-        public string RAM { get; set; }
+        public int Ram { get; set; }
+        public int LabId { get; set; }
 
-        public int LabId { get; set; } // Hangi laboratuvarda?
-        public int? UserId { get; set; } // Hangi öğrenciye zimmetli? (Boş olabilir)
+        // BURASI ÇOK KRİTİK: Soru işareti (?) olmalı!
+        public int? UserId { get; set; }
     }
 }

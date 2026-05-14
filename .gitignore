@@ -361,3 +361,17 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+
+
+
+
+
+
+
+
+# Hoca Kuralı: Veritabanı dosyaları engellendi
+*.db
+*.db-shm
+*.db-wal
+*.sqlite

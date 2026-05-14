@@ -1,0 +1,119 @@
+﻿<div class="d-flex" id="wrapper">
+    <!-- Sidebar (Yan Menü) -->
+    <div class="bg-dark text-white p-3" style="min-width: 250px; min-height: 100vh;">
+        <h4 class="text-center mb-4"><i class="fas fa-user-shield me-2"></i>Admin Panel</h4>
+        <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+                <a class="nav-link text-white active" href="#" onclick="loadPage('admin')">
+                    <i class="fas fa-flask me-2"></i>Laboratuvarlar
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link text-white" href="#" onclick="logout()">
+                    <i class="fas fa-sign-out-alt me-2"></i>Çıkış Yap
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Ana İçerik Alanı -->
+    <div class="container-fluid p-4 bg-light">
+        <div class="row">
+            <!-- 1. Laboratuvar Ekleme Formu -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Yeni Laboratuvar Ekle</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Laboratuvar Adı</label>
+                            <!-- KRİTİK ID: labName -->
+                            <input type="text" id="labName" class="form-control" placeholder="Örn: Yazılım Lab 1">
+                        </div>
+                        <!-- KRİTİK ONCLICK: addLab() -->
+                        <button onclick="addLab()" class="btn btn-success w-100">
+                            <i class="fas fa-plus me-2"></i>Laboratuvarı Kaydet
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- 2. Bilgisayar Ekleme Formu -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">Yeni Bilgisayar Ekle</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-2">
+                            <label class="form-label">Laboratuvar Seç</label>
+                            <!-- Bu dropdown app.js içindeki getLabs fonksiyonu ile dolacak -->
+                            <select id="pcLabId" class="form-select"></select>
+                        </div>
+                        <div class="mb-2">
+                            <input type="text" id="pcBrand" class="form-control" placeholder="Marka (Örn: Dell)">
+                        </div>
+                        <div class="mb-2">
+                            <input type="text" id="pcProcessor" class="form-control" placeholder="İşlemci (Örn: i7)">
+                        </div>
+                        <div class="mb-2">
+                            <input type="number" id="pcRam" class="form-control" placeholder="RAM (GB)">
+                        </div>
+                        <button onclick="addComputer()" class="btn btn-primary w-100">
+                            <i class="fas fa-desktop me-2"></i>Bilgisayarı Kaydet
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Laboratuvar Listesi -->
+            <div class="col-md-8 mb-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-dark text-white">
+                        <h5 class="mb-0">Laboratuvar Listesi</h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table table-hover mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>#ID</th>
+                                    <th>Laboratuvar Adı</th>
+                                </tr>
+                            </thead>
+                            <!-- KRİTİK ID: labTableBody -->
+                            <tbody id="labTableBody">
+                                <!-- Veriler app.js üzerinden buraya basılacak -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <!-- 3. Bilgisayar Listesi ve Atama -->
+            <div class="col-12">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">Envanter ve Bilgisayar Yönetimi</h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table table-hover mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Demirbaş Kodu</th>
+                                    <th>Donanım Özellikleri</th>
+                                    <th>Durum / Atama</th>
+                                </tr>
+                            </thead>
+                            <!-- KRİTİK ID: pcTableBody -->
+                            <tbody id="pcTableBody">
+                                <!-- Veriler app.js üzerinden buraya basılacak -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
